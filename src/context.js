@@ -14,11 +14,14 @@ const initionalState = {
 };
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initionalState);
-
+  const clearCart = () => {
+    dispatch({ type: 'clear_cart' });
+  };
   return (
     <AppContext.Provider
       value={{
         ...state,
+        clearCart,
       }}
     >
       {children}
