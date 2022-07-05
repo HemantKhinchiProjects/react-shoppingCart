@@ -18,13 +18,14 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'clear_cart' });
   };
   const remove = (id) => {
-    dispatch({ type: 'remove', payload: id });
+    dispatch({ type: 'REMOVE', payload: id });
   };
   return (
     <AppContext.Provider
       value={{
         ...state,
         clearCart,
+        remove,
       }}
     >
       {children}
